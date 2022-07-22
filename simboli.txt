@@ -1,0 +1,115 @@
+#, ; - pocetak
+    # - pocetak za c, c++, c#, java, js, ts
+    ; - pocetak za python i jezike koji koriste # za komentar
+enter - izvrsi / kraj
+## - boilerplate main programa
+
+
+
+() - funkcija emeta sa parametrima
+[] - niz
+    [[n]] - niz sa zadatom duzinom elemenata
+{} - expression
+`` - custom kod
+
+
+
+, - sled. parametar
+
+
+
+>> - sled. sekvenca funkcije ?
+
+
+
+... - tab pozicija (za kasnije, rezervisano)
+
+
+
+$value - vrednost necega
+    $123.45 - broj
+        $123 - int broj
+        $123.45 - float broj
+    $'aa', $"aa" - string
+    $[] - niz vrednosti
+    ${} - vrednost expressiona
+    $`` - vrednost iz koda (return funkcija)
+    $myVar - vrednost od varijable
+
+
+
+@myVar - deklaracije samo 1 varijable
+    @myVar! - deklaracija konstante (kada stoji pored varijable '!'
+@[] - deklaracija varijabli
+    primer: @[myEmptyVar, myInt=$5.3, myStr=$"a", myOtherVar<Int>, myArray<[]>, myConst!=3.14]
+
+
+
+@~funcName(params){code}=$return<type> - deklaracija funkcije
+    primer: @~sum(x<Int>, y<Int>){@[z=x+y]}=$z<Int>
+
+
+
+<> - tip
+    <Int> - int
+    <Float> - float
+    <Double> - double
+    <Bool> - bool, boolean
+    <Str> - string
+    <Void> - void
+    <Dict> - dictionary, hash map
+    <LinkedList> - linked list
+    <DLinkedList> - double linked list
+    <Vector2> - vektor 2d
+    <Vector3> - vektor 3d
+    <Class(ClassName)> objekat klase
+    <Exception> - error izuzetak
+
+    <&Type> - pointer nekog tipa
+    <Type[]> - niz nekog tipa
+    <Type*> - static
+
+
+
+??(){} - if
+:??(){} - elif
+:{} - else
+
+
+
+%?(){} - while
+%-(,,){} - for
+%--(,){} - for-each
+
+
+
+!?{} - try
+:!?(){} - catch
+!%() - throw
+
+
+
++++[] - import biblioteki
+
+
+
+@@[props]([methods])=${}~{} - deklaracija klase
+    @@ - pocetak za klasu
+    [props] - svojstva
+    ([]) - metode
+    $ - konstruktor
+        {} - sa parametrima i ta sranja
+    ~ - destruktor
+
+
+|function() - built-in funkcije
+    and(params) - vrati tacno ako su svi parametri tacni
+    or(params) - vrati tacno ako je makar 1 tacan
+    plog(params) - print/log formata unutra
+    min(params) - minimum od datih parametara
+    max(params) - maksimum od datih parametara
+    between([[2]]) - boolean ako je izmedju 2 parametara
+    swap([[2]]) - zamena vrednosti 2 parametra
+    sum(params) - zbir parametara
+    avg(params) - prosek parametara
+    pause(secs) - pauza ?
