@@ -93,9 +93,9 @@ $value - vrednost necega
 
 
 
-@@[props]([methods])=${}~{} - deklaracija klase
+@@ClassName[[][]]([methods])=${}~{} - deklaracija klase
     @@ - pocetak za klasu
-    [props] - svojstva
+    [[private_props][public_props]] - svojstva (prvo za private, drugo za public
     ([]) - metode
     $ - konstruktor
         {} - sa parametrima i ta sranja
