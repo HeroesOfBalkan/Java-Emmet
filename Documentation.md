@@ -60,6 +60,7 @@ Don't worry, everything will be explained.
 Java Emmet extension has a lot of abbreviations, or shorthands. Those will be listed below.
 
 ## Abbreviations list
+This is quick introduction of abbreviations. Full list can be found here.
 
 ### Common stuff
 
@@ -127,18 +128,19 @@ As mentioned at the start, you have to type hashtag (#) in **new line** only. If
 ```java
 ...
 // Non-compilant: simply doesn't work!
-System.out.println("Look mom! I'm on TV!"); @??(isCool){|plog("Nice!"):|plog("zzz")}
+System.out.println("Look mom! I'm on TV!"); #??(isCool){|plog("Nice!")}:{|plog("zzz")}
 
 ...
 // Compilant: now it's working!
 System.out.println("Look mom! I'm on TV!");
-@??(isCool){|plog("Nice!"):{|plog("zzz")}}
+#??(isCool){|plog("Nice!")}:{|plog("zzz")}
 
 ...
 // Also compilant: white spaces are ignored.
 abstract void guessWhat() {
     System.out.println("Look mom! I'm on TV!");
-    @??(isCool){|plog("Nice!"):{|plog("zzz")}}
+     #??(isCool){|plog("Nice!")}:{|plog("zzz")}
+//  ^ whitespace here
 }
 ...
 ```

@@ -1,3 +1,5 @@
+This is in Serbin, lemme write documentation for this
+
 #, ; - pocetak
     # - pocetak za c, c++, c#, java, js, ts
     ; - pocetak za python i jezike koji koriste # za komentar
