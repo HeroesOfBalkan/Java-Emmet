@@ -53,7 +53,7 @@ else if (!isSlacking) {
 
 Don't worry, everything will be explained.
 
---------------------------------------------------
+---------------------------------
 
 # Abbreviations - Shorthands
 
@@ -117,9 +117,9 @@ This is quick introduction of abbreviations. Full list can be found here.
 
 ### Others
 
-`+++` -> Import/Include of libraries
+`+++` -> Import/Include libraries
 
---------------------------------------------------
+---------------------------------
 
 # How to use
 
@@ -144,3 +144,72 @@ abstract void guessWhat() {
 }
 ...
 ```
+
+Even it is modular and flexible, for specific abbeviations you need to follow the logic and for most to follow format/syntax. You can not use `else` before an `if` statement. Does it make any sense? Same here. 
+
+What is good is that you can nest other formats inside your format. This is what I meant:
+
+`#??(isCool){??(isMomHere){|plog("Nice!")}:?(isDadHere){|plog("I'm so proud of you!")}}:{|plog("zzz")}`
+
+is same as:
+
+``` java
+if (isCool) {
+    if (isMomHere) {
+        System.out.println("Nice!");
+    }
+    else if (isDadHere) {
+        System.out.println("I\'m so proud of you!");
+    }
+}
+else {
+    System.out.println("zzz");
+}
+```
+
+Do you want to see something cool? You can copy multiple times a function! To do this, type `*` after a abbreviation or expression brackets (`{}`) and type how much do you want to write that abbreviation with a whole number.
+
+It should look like this:
+`..{}*n..`
+
+Example:
+
+`#??(isDivisableByTen){|plog("It's dividable by 10")}:?(...){...}*5:{|plog("It's not dividable at all..")}`
+
+Is same as:
+
+```java
+if (isDivisableByTen) {
+    System.out.println("It's dividable by 10");
+}
+
+else if (/*Reserved place 1*/) {
+    /*Reserved place 2*/
+}
+
+else if (/*Reserved place 3*/) {
+    /*Reserved place 4*/
+}
+
+else if (/*Reserved place 5*/) {
+    /*Reserved place 6*/
+}
+
+else if (/*Reserved place 7*/) {
+    /*Reserved place 8*/
+}
+
+else if (/*Reserved place 9*/) {
+    /*Reserved place 10*/
+}
+
+else {
+    System.out.println("It's not dividable at all..");
+}
+```
+
+Now this is beautiful! Also, my fingers will take a break!
+
+> Note: This doesn't work everywhere. Multiple use of multiplications also can lead to unwanted code. Wait 'till updates come.
+
+> Note: This is not yet planned to be implemented. You will have to wait 'till that happens.

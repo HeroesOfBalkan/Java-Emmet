@@ -60,7 +60,7 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 `##` -> Boilerplate
     > Used to generate main Java program boilerplate.
 
-
+---------------------------------
 
 ## Values, variables and functions
 
@@ -129,6 +129,7 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
     > Example: `@@Dog+Animal[[legs, arms, tail][name, age]]([walk, run, bark])=$("Princess", 3)`
 
+---------------------------------
 
 ## Conditional statements
 
@@ -160,7 +161,7 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
     > Example: `:{|plog("I'm not hungry or thirsty")}`
 
-
+----------------------------------
 
 ## Loops
 
@@ -192,7 +193,7 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
     > Example: `%--(shoppingItem, shoppingCart){getPrice(shoppingItem)}`
 
-
+---------------------------------
 
 ## Errors handling
 
@@ -234,7 +235,7 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
     > Example: `!~{|plog("change da world\nmy final message. Goodb ye")}
 
-
+---------------------------------
 
 ## Built-in functions
 
@@ -246,3 +247,15 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
         `plog(something)` - Print `something` to console/terminal/shell
         `and(conditions)` - Checks if all `conditions` are true
         `or(conditions)` - Checks if at least one of `conditions` is true
+
+---------------------------------
+
+## Others
+
+`+++` -> Import/Include libraries
+
+    > Used to import single or multiple libraries
+
+    > Full syntax: `+++[libraries]` or `+++library`
+
+    > Example: `+++[java.utils.Scanner, Spring, Apache]`
