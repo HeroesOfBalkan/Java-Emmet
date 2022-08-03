@@ -1,60 +1,73 @@
 # j-emmet README
 
-This is the README for your extension "j-emmet". After writing up a brief description, we recommend including the following sections.
+Java Emmet (j-emmet) is an editor extension for productivity and time saving by introducing custom code generator that is typed directly into your editor. With a use of abbreviations given in this extension and order set as you wish, you will quickly complete your task! No more pain in finger and arm muscles!
+
+> Note: This plugin is in early development stage. Some features and functinalities are missing.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Like HTML Emmet, j-emmet has a lot of features to keep things simplier.
 
-For example if there is an image subfolder under your extension project workspace:
+### Abbreviations / Shortcuts
 
-\!\[feature X\]\(images/feature-x.png\)
+Extension j-emmet has a lot of abbreviations (shortcuts) to write for common usages like conditional statements, loops, declarations, error handling, etc.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+j-emmet uses C-like syntax (or curly braces syntax) or something similar to that for abbreviations. To see all of abbreviations and how to use them, please check Documentation and Abbreviation list.
+
+### Modularity and flexibility
+
+Need to create a class? Write that 5-line boilerplate? Declare dozens of variables? Don't worry! This extension also supports copying same code multiple times. Not only that but copying whole block of the code! Instead of multiple else-if (nested conditionals) statements, write one else-if statement and repeat it with at least 2 characters from your keyboard.
+
+There is much more than copying.
+
+### Dynamic workflow and customatization
+
+Everything is running and registered in runtime, whatever you write. What this extension also allows is to customize snippets and adapt to your needs. Working in Spring? Create your own user-defined snippets for your workspace and use them inside j-emmet formats.
+
+---------------------------------
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Nothing special is needed beside your preferred text editor* and knowledge. Go and write your next project.
+
+> Note: Currently supported text editors and IDEs Visual Studio Code only, for now. You will wait for other text editors and IDEs to get similar one, since different softwares don't use similar APIs
+
+---------------------------------
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+There is only one setting for this extension: to enable or disable.
 
-For example:
+* `j-emmet.enable`: enable/disable this extension
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+---------------------------------
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+This is in early development stage. Experience might not be as expected.
+
+---------------------------------
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+There are no release notes for now until documentation is completed.
 
 -----------------------------------------------------------------------------------------------------------
+
+## Contribution
+
+Make sure you read and understood Manual and Documentation. It is recommended to know JavaScript/TypeScript and VSC API Then fork this repository locally, make changes and submit a PR. You can find more about those topics below.
+
+---------------------------------
 ## Following extension guidelines
 
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
+---------------------------------
+
+## Working with Markdown (something for me)
 
 **Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
 

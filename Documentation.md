@@ -1,215 +1,26 @@
-# Brief usage
-
-To use this extension, you start typing hashtag (#) in **new line**, then go with abbreviations or sequences of abbreviations (listed below), but it has to match format as it is defined. After finishing your sequence, press Enter to generate code from your "hyeroglyphes".
-
-You probably have heard of HTML Emmet or just Emmet before, so why don't we use similar idea?
-
-The JEmmet format follows somewhat Curly brackets-like (or C-like) syntax.
-
-> Note: You may notice there are more symbols like hashtag (#), dollar sign ($), percentage (%), and mark (&), et symbol (@) and et cetara. This is to avoid confusion with reserved words, variables and functions of your actual program/code.
-
-> Contribution: It is available on GitHub. To contribute, make sure you read this documentation.
-
-For an example:
-
-```java
-...
-public static void main(String[] args) {
-    #@[firstName=$"John", lastName=$'Doe', age=$32, salarryMonth=$4999.99, position=$'Manager', isSlacking=$false]
-}
-...
-```
-
-is equal to:
-
-```java
-public static void main(String[] args) {
-    String firstName = "John";
-    String lastName = "Doe";
-    int age = 32;
-    double salaryMonth = 4999.99;
-    String position = "Manager";
-    boolean isSlacking = false
-}
-...
-```
-
-or another example:
-
-```
-#??(|and(|between(salaryMonth, 3000.00, 7500.00)), |not(isSlacking)){salaryMonth=$8000.00} :??(isSlacking){salaryMonth=$0.00}
-```
-
-is equal to:
-
-```java
-if (salaryMonth > 3000.00 && salaryMonth < 7500.00) {
-    salaryMonth = 8000.00;
-}
-else if (!isSlacking) {
-    salaryMonth = 0.00;
-}
-```
-
-Don't worry, everything will be explained.
-
 ---------------------------------
 
-# Abbreviations - Shorthands
+# Functionality, structure and logic behind Java Emmet (for developers and contributors)
 
-Java Emmet extension has a lot of abbreviations, or shorthands. Those will be listed below.
+Here is everything how is this extension made, its functionality and structure.
 
-## Abbreviations list
-This is quick introduction of abbreviations. Full list can be found here.
+> Note: This is for developers and contributors. If you want to contribute, read then. If you don't plan contributing, this section is not for you.
 
-### Common stuff
+Requirements to contribute are:
 
-`()` -> Parameters
-`[]` -> Array
-`{}` -> Expression
-` \`\` ` -> Custom code (Actual injected Java code)
+* TypeScript or JavaScript
+* Visual Studio Code API
 
-`,` -> Next parameter
-`>>` -> Next sequence
-`...` -> Reserved pointer position (*"for later"*)
+## Structure
 
-`#` -> Start of code
-`##` -> Boilerplate
+Picture below shows the structure of extension.
 
-### Values, variables and functions
+[Structure of Java Emmet extension](nothingNow)
 
-`$` -> Value
+First of all, extension program `extension.ts` checks if the active document (`Notebook` or `VirtualDocument` by VSC API) or active file (that is currently worked on) has `.java` extension. If so, program will continue execution. If not, program will ignore current document and wait for another document to be opened (or focused/active).
 
-`@` -> Variable declaration
-`@~` -> Function declaration
-`@@` -> Class declaration
+Runner program is also `extension.ts` where is managed if extension is enabled or disabled and listens to new line and hashtag symbol (`#`). If something else is typed instad of hashtag, extension will ignore this line and wait for next new line. White spaces like spaces and indentations won't affect listener. Then extension listens to next new line (or `enter` is pressed). Copies string from hashtag symbol (`#`) and new line (`enter` button) and passes to `main.ts` program, where string will be processed.
 
-`<>` - Type of value, variable or function
+Main program is `main.ts`. `main.ts` scans for each character or symbol and check what characters mean. It reads based on "Rules" ("Rules" are programs specially designed to process specific abbreviations). If program has a match for a "rule", it will run "Rule" program and process that abbreviation and passes abbreviation.
 
-### Conditional statements
-
-`??` -> If statement
-`:?` -> Else If statement
-`:` -> Else statement
-
-### Loops
-
-`%?` - While loop
-`%-` -> For loop
-`%--` -> For each loop
-
-### Error handling
-
-`!?` -> Try statement
-`:!` -> Catch/Expect statement
-`!%` -> Throw statement
-
-### Built-in functions
-
-`|` -> Prefix for built-in functions
-
-`plog(something)` -> Print to console/terminal/shell
-    `something`:  Any variable or value
-`and(params)` -> Checks if all parameters are true
-    `params`: Array of elements or Array variable/constant
-`or(params)` -> Checks if at least one parameter is true
-    `params`: Array of elements or one array variable/constant
-
-### Others
-
-`+++` -> Import/Include libraries
-
----------------------------------
-
-# How to use
-
-As mentioned at the start, you have to type hashtag (#) in **new line** only. If you start typing in continuation, it won't work, just won't work. You **have to** start new line and write your format! White spaces like spacebar, tabulants or indents are ignored.
-
-```java
-...
-// Non-compilant: simply doesn't work!
-System.out.println("Look mom! I'm on TV!"); #??(isCool){|plog("Nice!")}:{|plog("zzz")}
-
-...
-// Compilant: now it's working!
-System.out.println("Look mom! I'm on TV!");
-#??(isCool){|plog("Nice!")}:{|plog("zzz")}
-
-...
-// Also compilant: white spaces are ignored.
-abstract void guessWhat() {
-    System.out.println("Look mom! I'm on TV!");
-     #??(isCool){|plog("Nice!")}:{|plog("zzz")}
-//  ^ whitespace here
-}
-...
-```
-
-Even it is modular and flexible, for specific abbeviations you need to follow the logic and for most to follow format/syntax. You can not use `else` before an `if` statement. Does it make any sense? Same here. 
-
-What is good is that you can nest other formats inside your format. This is what I meant:
-
-`#??(isCool){??(isMomHere){|plog("Nice!")}:?(isDadHere){|plog("I'm so proud of you!")}}:{|plog("zzz")}`
-
-is same as:
-
-``` java
-if (isCool) {
-    if (isMomHere) {
-        System.out.println("Nice!");
-    }
-    else if (isDadHere) {
-        System.out.println("I\'m so proud of you!");
-    }
-}
-else {
-    System.out.println("zzz");
-}
-```
-
-Do you want to see something cool? You can copy multiple times a function! To do this, type `*` after a abbreviation or expression brackets (`{}`) and type how much do you want to write that abbreviation with a whole number.
-
-It should look like this:
-`..{}*n..`
-
-Example:
-
-`#??(isDivisableByTen){|plog("It's dividable by 10")}:?(...){...}*5:{|plog("It's not dividable at all..")}`
-
-Is same as:
-
-```java
-if (isDivisableByTen) {
-    System.out.println("It's dividable by 10");
-}
-
-else if (/*Reserved place 1*/) {
-    /*Reserved place 2*/
-}
-
-else if (/*Reserved place 3*/) {
-    /*Reserved place 4*/
-}
-
-else if (/*Reserved place 5*/) {
-    /*Reserved place 6*/
-}
-
-else if (/*Reserved place 7*/) {
-    /*Reserved place 8*/
-}
-
-else if (/*Reserved place 9*/) {
-    /*Reserved place 10*/
-}
-
-else {
-    System.out.println("It's not dividable at all..");
-}
-```
-
-Now this is beautiful! Also, my fingers will take a break!
-
-> Note: This doesn't work everywhere. Multiple use of multiplications also can lead to unwanted code. Wait 'till updates come.
-
-> Note: This is not yet planned to be implemented. You will have to wait 'till that happens.
+What `main.ts` do to scan for each character uses "Divide and Conquer" technique. It splits or slices complex string into simple substrings.
