@@ -57,16 +57,16 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
 
 
-`##` -> Boilerplate
-    > Used to generate main Java program boilerplate.
+`##` -> Boilerplate/Template
+    > Used to generate main Java program boilerplate, predefined or user-defined templates.
 
 ---------------------------------
 
 ## Values, variables and functions
 
-`$` -> Value
+`=` -> Value assign
 
-    > Used to tell what value it has. Only used with assignments with equal sign (=).
+    > Used to tell what value it has.
 
 
 
@@ -96,6 +96,10 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
         `&` - Pointer
         `*` - Static
         `~` - Abstract
+        `-` - Signed
+        `+` - Unsigned
+        `/` - Long
+        `_` - Short
 
     > `(OptionalModifiers)` are only for some types, like class objects
 
@@ -105,9 +109,9 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
     > Used to declare variable(s).
 
-    > Full syntax: `@[vars<optionalType>=$optionalValue,..]` for mutiple or `@var<optionalType>=$optinalValue` for single variable.
+    > Full syntax: `@[vars<optionalType>=optionalValue,..]` for mutiple or `@var<optionalType>=optinalValue` for single variable.
 
-    > Example: `@[myInt=$18, myStr<Str>, myArr=$[1, 2, 3]]` or `@mySecretIsHidden=$false`
+    > Example: `@[myInt=18, myStr<Str>, myArr=[1, 2, 3]]` or `@mySecretIsHidden=false`
 
 
 
@@ -115,9 +119,9 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
     > Used to declare functions.
 
-    > Full syntax: `@~functionName(optionalParameters){optinalExpressions}=$optionalReturnValue<ReturnType>
+    > Full syntax: `@~functionName(optionalParameters){optinalExpressions}=optionalReturnValue<ReturnType>
 
-    > Example: `@~mediana(array[]){...}=$middle`
+    > Example: `@~mediana(array[]){...}=middle`
 
 
 
@@ -125,9 +129,9 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
     > Used to declare classes.
 
-    > Full syntax: `@@className+parentClass[[privProps][pubProps]]([methods])=${ConstructorInitialization}~{Destructor}`
+    > Full syntax: `@@className+parentClass[[privProps][pubProps]]([methods])={ConstructorInitialization}~{Destructor}`
 
-    > Example: `@@Dog+Animal[[legs, arms, tail][name, age]]([walk, run, bark])=$("Princess", 3)`
+    > Example: `@@Dog+Animal[[legs, arms, tail][name, age]]([walk, run, bark])=("Princess", 3)`
 
 ---------------------------------
 
@@ -145,7 +149,7 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
 `:?` -> Else if statement
 
-    > Used to check if last statement was false and new something is true. This can't work without previous if statement (`??`).
+    > Used to check if last statement was false and new something is true.
 
     > Full syntax: `:?(nextConditions){nextExpressions}`
 
@@ -155,7 +159,7 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
 `:` -> Else
 
-    > Used to check if all statements are false. This can't work without previous if statement (`??`).
+    > Used to check if all statements are false.
 
     > Full syntax: `:{finalExpressions}`
 
@@ -209,7 +213,7 @@ Here is everything about each abbreviation, usage, how to use (syntax or format)
 
 `:!` -> Catch statement
 
-    > Used to catch or expect and fix errors that occured in runtime. This can't work without previous try statement (`!?`)
+    > Used to catch or expect and fix errors that occured in runtime.
 
     > Full syntax: `:!(exceptions){expressions}`
 
