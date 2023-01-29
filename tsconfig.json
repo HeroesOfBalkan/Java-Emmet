@@ -16,7 +16,8 @@
 		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
 		"esModuleInterop": true
 	},
-	"include": ["/**/*.ts"],
+	// "include": ["/**/*.ts"],
+	"include": ["src/**/*"],
 	"exclude": ["./images"],
 	"ts-node": {
 		"esm": true,

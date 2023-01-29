@@ -1,4 +1,4 @@
-function declareVariable(rawSubstring: string) {
+function declareVariable(rawSubstring: String) {
     let finalString = "";
 
     let typePosition = rawSubstring.indexOf("<");
@@ -10,9 +10,9 @@ function declareVariable(rawSubstring: string) {
 
     let name: string = rawSubstring.substring(0, valuePosition | typePosition);
 
-    let type: string = rawSubstring.substring(typePosition + 1, rawSubstring.indexOf(">"))
+    let type: string = rawSubstring.substring(typePosition + 1, rawSubstring.indexOf(">"));
 
-    let value: string = rawSubstring.substring(valuePosition, rawSubstring.length());
+    let value: string = rawSubstring.substring(valuePosition, rawSubstring.length);
 
     return type + " " + name + " " + value;
 }
@@ -31,7 +31,7 @@ function declareVariables(rawString: string) {
 
     while (startingIndex < endingIndex) {
         let next = rawString.indexOf(",");
-        let newVariable = declareVariable(rawString.substring(startingIndex, next))
+        let newVariable = declareVariable(rawString.substring(startingIndex, next));
         readyString += newVariable + ", ";
         startingIndex = next;
     }
