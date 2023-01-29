@@ -15,7 +15,7 @@ Requirements to contribute are:
 
 Picture below shows the structure of extension.
 
-[Structure of Java Emmet extension](images/Extension%20Structure.jpg)
+[Structure of Java Emmet extension](images/ExtensionStructure.jpg)
 
 First of all, extension program `extension.ts` checks if the active document (`Notebook` or `VirtualDocument` by VSC API) or active file (that is currently worked on) has `.java` extension. If so, program will continue execution. If not, program will ignore current document and wait for another document to be opened (or focused/active).
 

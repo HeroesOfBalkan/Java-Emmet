@@ -15,7 +15,7 @@ For an example:
 ```java
 ...
 public static void main(String[] args) {
-    #@[firstName=$"John", lastName=$'Doe', age=$32, salarryMonth=$4999.99, position=$'Manager', isSlacking=$false]
+    #@[firstName="John", lastName='Doe', age=32, salarryMonth=4999.99, position='Manager', isSlacking=false]
 }
 ...
 ```
